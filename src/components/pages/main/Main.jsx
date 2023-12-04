@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 

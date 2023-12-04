@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    > img {
+    > a > img {
       width: 100%;
     }
   }
@@ -40,10 +40,12 @@ const Header = () => {
   return (
     <StyledHeader>
       <div className="logo">
-        <img
-          src="https://cdn.vectorstock.com/i/preview-1x/37/35/q-and-a-speech-bubbles-green-violet-balloons-vector-38793735.jpg"
-          alt="logo"
-        />
+        <Link to="/">
+          <img
+            src="https://cdn.vectorstock.com/i/preview-1x/37/35/q-and-a-speech-bubbles-green-violet-balloons-vector-38793735.jpg"
+            alt="logo"
+          />
+        </Link>
       </div>
       <h1>Bets place to find your answer and discuss on relevent topics.</h1>
       <ul>
