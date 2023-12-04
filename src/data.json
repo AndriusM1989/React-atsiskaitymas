@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "user",
+      "isBanned": false,
+      "userName": "Klausimelis2000",
+      "email": "klausimelis@gmail.com",
+      "passwordNormal": "miaumiau20#",
+      "password": "$2a$08$IYi5RXkK/fSmd3dr0lzrMO1w6f5ZVnvYtKrOzlAARlHs13AsFtDOi",
+      "age": 23,
+      "registerDate": "2023-01-01",
+      "profilePicture": "https://www.shutterstock.com/image-photo/profile-view-cute-young-red-600nw-2242222153.jpg"
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "isBanned": false,
+      "userName": "Atsakimelis2000",
+      "email": "atsakimelis@gmail.com",
+      "passwordNormal": "heyMamma@69",
+      "password": "$2a$08$m2/yXX.IutwnSlaYZ/q.0OMrkp86XJuvwy386gnj/iNat/YDV7cWq",
+      "age": 30,
+      "registerDate": "2023-01-01",
+      "profilePicture": "https://i5.walmartimages.com/seo/Funko-Pop-Animation-Johnny-Bravo-Johnny-with-Mirror-Com-Vinyl-Figure_cc707dce-b67c-403c-a8d2-5462cc735080.db2c948261e485099d08c8775d24eed2.png"
+    },
+    {
+      "id": 0,
+      "role": "admin",
+      "isBanned": false,
+      "userName": "admin",
+      "email": "a@a.com",
+      "passwordNormal": "admin",
+      "password": "$2a$08$zCOTcOiGYiyt0A2YDH/aAuHE1p960p/mCDQJlJFijcerHtAma40la",
+      "profilePicture": "https://cdn.vectorstock.com/i/preview-1x/34/96/flat-business-man-user-profile-avatar-in-suit-vector-4333496.jpg"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "userId": 2,
+      "name": "Apie orus",
+      "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
+      "postDate": "2023-12-02",
+      "vote": 0,
+      "answer": {
+        "id": 1,
+        "userId": 2,
+        "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
+        "answerDate": "2023-12-02",
+        "vote": 0
+      }
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Apie politiką",
+      "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
+      "postDate": "2023-12-01",
+      "vote": 0,
+      "answer": {
+        "id": 1,
+        "userId": 2,
+        "answer": "Gerų kandidatų nėra, todėl reikia balsuoti už geriausią iš blogų. Svarbu, kad ne konservatoriai...",
+        "answerDate": "2023-12-01",
+        "vote": 0
+      }
+    }
+  ]
+}
