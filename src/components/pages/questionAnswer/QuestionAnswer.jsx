@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LoadingScreen from "../loadingScreen/LoadingScreen";
 
-const StyledSelectedQuestion = styled.div``;
+const StyledSelectedQuestion = styled.div`
+  background-color: #fafafa;
+  > div :first-child{
+    color: red;
+  }
+`;
 const QuestionAnswer = () => {
   const { id } = useParams();
   const [data, setData] = useState("");
@@ -21,26 +26,38 @@ const QuestionAnswer = () => {
     const data = await res.json();
     return setData(data);
   }
+
+  function Answer({ data }) {
+    return (
+      <div>
+        <p>{data.userId}</p>
+        <p>{data.answer}</p>
+        <p>{data.answerDate.substring(0, 10)}</p>
+        <p>{data.votes}</p>
+      </div>
+    );
+  }
+
   return (
     <>
       {loading && <LoadingScreen />}
       {!loading && (
         <StyledSelectedQuestion>
-          <h1>{data.name}</h1>
           <div>
-            <p>Asked on: {data.postDate}</p>
-            <p>modified on:</p>
-          </div>
-          <p>{data.description}</p>
-          <div>
-            <p>answer count:</p>
-          </div>
-          <div>
+            <h1>{data.name}</h1>
             <div>
-              <p>{data.answer.userId}</p>
-              <p>{data.answer.answerDate}</p>
+              <p>Asked on: {data.postDate.substring(0, 10)}</p>
+              <p>modified on:</p>
             </div>
-            <p>{data.answer.answer}</p>
+            <p>{data.description}</p>
+            <div>
+              <p>answer count:</p>
+            </div>
+          </div>
+          <div>
+            {data.answers.map((answer) => (
+              <Answer key={answer.id} data={answer} />
+            ))}
           </div>
         </StyledSelectedQuestion>
       )}

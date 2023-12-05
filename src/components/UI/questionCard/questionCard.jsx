@@ -12,6 +12,7 @@ const StyledCard = styled.div`
     gap: 1rem;
   }
   > div:nth-child(2) {
+
   }
 `;
 

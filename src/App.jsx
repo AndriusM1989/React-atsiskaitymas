@@ -5,6 +5,7 @@ import Main from "./components/pages/main/Main";
 import QuestionAnswer from "./components/pages/questionAnswer/QuestionAnswer";
 import Popular from "./components/pages/popular/Popular";
 import TopVoted from "./components/pages/topVoted/TopVoted";
+import AddQuestion from "./components/pages/addQuestion/AddQuestion";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route index element={<Main />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/topVoted" element={<TopVoted />} />
+        <Route path="/addQuestion" element={<AddQuestion />} />
         <Route path="/questionAnswer">
           <Route path=":id" element={<QuestionAnswer />} />
         </Route>

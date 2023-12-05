@@ -43,13 +43,15 @@
       "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
       "postDate": "2023-12-02",
       "vote": 0,
-      "answer": {
-        "id": 1,
-        "userId": 2,
-        "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
-        "answerDate": "2023-12-02",
-        "vote": 0
-      }
+      "answers": [
+        {
+          "id": 1,
+          "userId": 2,
+          "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
+          "answerDate": "2023-12-02",
+          "vote": 0
+        }
+      ]
     },
     {
       "id": 2,
@@ -58,13 +60,51 @@
       "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
       "postDate": "2023-12-01",
       "vote": 0,
-      "answer": {
-        "id": 1,
-        "userId": 2,
-        "answer": "Gerų kandidatų nėra, todėl reikia balsuoti už geriausią iš blogų. Svarbu, kad ne konservatoriai...",
-        "answerDate": "2023-12-01",
-        "vote": 0
-      }
+      "answers": [
+        {
+          "id": 1,
+          "userId": 2,
+          "answer": "Gerų kandidatų nėra, todėl reikia balsuoti už geriausią iš blogų. Svarbu, kad ne konservatoriai...",
+          "answerDate": "2023-12-01",
+          "vote": 10
+        }
+      ]
+    },
+    {
+      "id": "a27a6065-a451-4844-865a-664beee90e83",
+      "name": "Bandymas 6",
+      "description": "Atsakymas 6",
+      "postDate": "2023-12-05T11:45:19.953Z",
+      "votes": 0,
+      "answers": [
+        {
+          "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f397",
+          "answer": "Atsakymas 1",
+          "answerDate": "2023-12-05T11:45:11.258Z",
+          "votes": 0
+        },
+        {
+          "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f39456",
+          "answer": "Atsakymas 2",
+          "answerDate": "2023-12-05T11:45:11.258Z",
+          "votes": 123
+        }
+      ]
+    },
+    {
+      "id": "498b4816-4481-40ea-8fd2-40d2b1001e4a",
+      "name": "Kaip man padaryti tobulą forumą?",
+      "description": "Nukipijuoti geriausią variantą internete ir jį patobulinti.",
+      "postDate": "2023-12-05T12:29:15.680Z",
+      "votes": 0,
+      "answers": [
+        {
+          "id": "ddaf28b8-cff4-45ab-9451-82fe5bd626e2",
+          "answer": "",
+          "answerDate": "2023-12-05T12:29:00.722Z",
+          "votes": 0
+        }
+      ]
     }
   ]
 }

@@ -5,16 +5,23 @@ import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 
 const StyledMain = styled.main`
-  > div > div {
-    display: flex;
-    > nav {
-      > ul {
-        display: flex;
-        gap: 1rem;
-        > li {
-          list-style: none;
-          > a {
-            text-decoration: none;
+  > div {
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      >a{
+        text-decoration: none;
+      }
+      > nav {
+        > ul {
+          display: flex;
+          gap: 1rem;
+          > li {
+            list-style: none;
+            > a {
+              text-decoration: none;
+            }
           }
         }
       }
@@ -59,6 +66,12 @@ const Main = () => {
               </li>
             </ul>
           </nav>
+          <NavLink
+            to="/addQuestion"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Ask something
+          </NavLink>
         </div>
       </div>
       <div>
