@@ -31,6 +31,9 @@ const StyledMain = styled.main`
 
 const Main = () => {
   const { question } = useContext(QuestionContext);
+  const sortedQuestions = question.sort((a, b) => {
+    return new Date(b.postDate) - new Date(a.postDate);
+  });
 
   return (
     <StyledMain>
@@ -75,7 +78,7 @@ const Main = () => {
         </div>
       </div>
       <div>
-        {question.map((questions) => {
+        {sortedQuestions.map((questions) => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>

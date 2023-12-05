@@ -30,11 +30,7 @@ const AddQuestion = () => {
     postDate: new Date(),
     votes: 0,
     answers: [{
-      id: uuid(),
-      userId: loggedInUser.id,
-      answer: "",
-      answerDate: new Date(),
-      votes: 0,
+      
     }]
   };
 

@@ -31,6 +31,7 @@ const StyledPopular = styled.main`
 
 const Popular = () => {
   const { question } = useContext(QuestionContext);
+  const sortedQuestions = question.sort((a, b) => b.answers.length - a.answers.length);
 
   return (
     <StyledPopular>
@@ -75,7 +76,7 @@ const Popular = () => {
         </div>
       </div>
       <div>
-        {question.map((questions) => {
+        {sortedQuestions.map((questions) => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>

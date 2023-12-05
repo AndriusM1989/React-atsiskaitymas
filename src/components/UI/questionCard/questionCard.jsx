@@ -20,8 +20,8 @@ const QuestionCard = ({ data }) => {
   return (
     <StyledCard>
       <div>
-        <p>{data.vote}</p>
-        <p>answers</p>
+        <p>Votes: {data.votes}</p>
+        <p>Answers: {data.answers.length}</p>
       </div>
       <div>
         <h4>
@@ -38,7 +38,7 @@ const QuestionCard = ({ data }) => {
         <p>{data.description}</p>
       </div>
       <div>
-        <p>{data.userId}</p>
+        <p>Author: {data.userId}</p>
       </div>
     </StyledCard>
   );

@@ -4,10 +4,24 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LoadingScreen from "../loadingScreen/LoadingScreen";
 
-const StyledSelectedQuestion = styled.div`
-  background-color: #fafafa;
-  > div :first-child{
-    color: red;
+const StyledSelectedQuestion = styled.main`
+  > div.question {
+    > div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  > div.answer {
+    padding-left: 50px;
+    > div {
+      border: 1px solid black;
+      border-radius: 5px;
+
+      > div {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
   }
 `;
 const QuestionAnswer = () => {
@@ -30,10 +44,12 @@ const QuestionAnswer = () => {
   function Answer({ data }) {
     return (
       <div>
-        <p>{data.userId}</p>
+        <h3>{data.userId}</h3>
         <p>{data.answer}</p>
-        <p>{data.answerDate.substring(0, 10)}</p>
-        <p>{data.votes}</p>
+        <div>
+          <p>{data.answerDate.substring(0, 10)}</p>
+          <p>{data.votes}</p>
+        </div>
       </div>
     );
   }
@@ -43,22 +59,22 @@ const QuestionAnswer = () => {
       {loading && <LoadingScreen />}
       {!loading && (
         <StyledSelectedQuestion>
-          <div>
+          <div className="question">
             <h1>{data.name}</h1>
             <div>
               <p>Asked on: {data.postDate.substring(0, 10)}</p>
-              <p>modified on:</p>
+              <p>Modified on:</p>
             </div>
             <p>{data.description}</p>
             <div>
-              <p>answer count:</p>
+              <p>Answer count: {data.answers.length}</p>
             </div>
           </div>
-          <div>
-            {data.answers.map((answer) => (
-              <Answer key={answer.id} data={answer} />
-            ))}
-          </div>
+          {data.answers.length
+            ? data.answers.map((answer) => (
+                <Answer key={answer.id} data={answer} />
+              ))
+            : "No comments so far..."}
         </StyledSelectedQuestion>
       )}
     </>

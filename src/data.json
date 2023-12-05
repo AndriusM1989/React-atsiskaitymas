@@ -41,14 +41,14 @@
       "userId": 2,
       "name": "Apie orus",
       "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
-      "postDate": "2023-12-02",
-      "vote": 0,
+      "postDate": "2023-12-05T12:29:15.680Z",
+      "votes": 2,
       "answers": [
         {
           "id": 1,
           "userId": 2,
           "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
-          "answerDate": "2023-12-02",
+          "answerDate": "2023-12-05T12:29:15.680Z",
           "vote": 0
         }
       ]
@@ -59,7 +59,7 @@
       "name": "Apie politiką",
       "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
       "postDate": "2023-12-01",
-      "vote": 0,
+      "votes": 10,
       "answers": [
         {
           "id": 1,
@@ -75,7 +75,7 @@
       "name": "Bandymas 6",
       "description": "Atsakymas 6",
       "postDate": "2023-12-05T11:45:19.953Z",
-      "votes": 0,
+      "votes": 7,
       "answers": [
         {
           "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f397",
@@ -96,14 +96,9 @@
       "name": "Kaip man padaryti tobulą forumą?",
       "description": "Nukipijuoti geriausią variantą internete ir jį patobulinti.",
       "postDate": "2023-12-05T12:29:15.680Z",
-      "votes": 0,
+      "votes": 1,
       "answers": [
-        {
-          "id": "ddaf28b8-cff4-45ab-9451-82fe5bd626e2",
-          "answer": "",
-          "answerDate": "2023-12-05T12:29:00.722Z",
-          "votes": 0
-        }
+        
       ]
     }
   ]
