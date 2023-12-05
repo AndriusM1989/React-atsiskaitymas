@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 
-const StyledMain = styled.main`
+const StyledPopular = styled.main`
   > div > div {
     display: flex;
     > nav {
@@ -22,13 +22,13 @@ const StyledMain = styled.main`
   }
 `;
 
-const Main = () => {
+const Popular = () => {
   const { question } = useContext(QuestionContext);
 
   return (
-    <StyledMain>
+    <StyledPopular>
       <div>
-        <h1>Newest Questions</h1>
+        <h1>Popular Questions</h1>
         <div>
           <h3>23420394 questions</h3>
           <nav>
@@ -66,8 +66,8 @@ const Main = () => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>
-    </StyledMain>
+    </StyledPopular>
   );
 };
 
-export default Main;
+export default Popular;
