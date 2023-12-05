@@ -5,7 +5,7 @@ import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 
 const StyledMain = styled.main`
-  > div {
+  > div:first-child  {
     > div {
       display: flex;
       justify-content: space-between;
@@ -22,10 +22,18 @@ const StyledMain = styled.main`
             > a {
               text-decoration: none;
             }
+            >a.active{
+              color: red;
+            }
           }
         }
       }
     }
+  }
+  >div:last-child{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 `;
 

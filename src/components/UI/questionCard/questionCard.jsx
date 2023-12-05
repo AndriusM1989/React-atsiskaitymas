@@ -4,15 +4,12 @@ import styled from "styled-components";
 const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   border: 1px solid #ccc;
   border-radius: 5px;
   > div:nth-child(1) {
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
-  }
-  > div:nth-child(2) {
-
   }
 `;
 

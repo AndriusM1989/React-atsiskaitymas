@@ -3,6 +3,14 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LoadingScreen from "../loadingScreen/LoadingScreen";
+import { v4 as uuid } from "uuid";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import FormikInput from "../../UI/input/FormikInput";
+import QuestionContext from "../../../contexts/QuestionContext";
+import UsersContext from "../../../contexts/UsersContext";
+import { Formik } from "formik";
+import * as Yup from "yup";
 
 const StyledSelectedQuestion = styled.main`
   > div.question {
@@ -28,6 +36,13 @@ const QuestionAnswer = () => {
   const { id } = useParams();
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const validationSchema = Yup.object({
+    answer: Yup.string()
+      .min(5, "Minimum length 5 symbols")
+      .required("This field must be filled")
+      .trim(),
+  });
 
   useEffect(() => {
     fetchData().then(() => {

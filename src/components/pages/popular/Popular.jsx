@@ -5,12 +5,12 @@ import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 
 const StyledPopular = styled.main`
-  > div {
+  > div:first-child {
     > div {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      >a{
+      > a {
         text-decoration: none;
       }
       > nav {
@@ -22,16 +22,26 @@ const StyledPopular = styled.main`
             > a {
               text-decoration: none;
             }
+            >a.active{
+              color: red;
+            }
           }
         }
       }
     }
   }
+  > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const Popular = () => {
   const { question } = useContext(QuestionContext);
-  const sortedQuestions = question.sort((a, b) => b.answers.length - a.answers.length);
+  const sortedQuestions = question.sort(
+    (a, b) => b.answers.length - a.answers.length
+  );
 
   return (
     <StyledPopular>
