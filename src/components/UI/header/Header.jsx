@@ -2,7 +2,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  max-width: 1440px;
   height: 100px;
   display: flex;
   justify-content: center;
