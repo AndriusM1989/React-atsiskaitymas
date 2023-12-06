@@ -4,14 +4,20 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { QuestionProvider } from "./contexts/QuestionContext.jsx";
 import { UsersProvider } from "./contexts/UsersContext.jsx";
+import { AnswerProvider } from "./contexts/AnswerContext.jsx";
+import { VotesProvider } from "./contexts/VotesContext.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <UsersProvider>
     <QuestionProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <AnswerProvider>
+        <VotesProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </VotesProvider>
+      </AnswerProvider>
     </QuestionProvider>
   </UsersProvider>
 );

@@ -38,130 +38,87 @@
   "questions": [
     {
       "id": 1,
-      "userName": "Atsakimelis2000",
+      "userId": 0,
       "title": "Apie orus",
       "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
       "postDate": "2023-12-05T12:29:15.680Z",
-      "votes": 2
+      "votes": 2,
+      "answers": [
+        {
+          "id": 1,
+          "userId": 2,
+          "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
+          "answerDate": "2023-12-05T12:29:15.680Z",
+          "vote": 0
+        }
+      ]
     },
     {
       "id": 2,
-      "userName": "Atsakimelis2000",
+      "userId": 0,
       "title": "Apie politiką",
       "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
       "postDate": "2023-12-01",
-      "votes": 10
+      "votes": 10,
+      "answers": [
+        {
+          "id": 1,
+          "userId": 2,
+          "answer": "Gerų kandidatų nėra, todėl reikia balsuoti už geriausią iš blogų. Svarbu, kad ne konservatoriai...",
+          "answerDate": "2023-12-01",
+          "vote": 10
+        }
+      ]
     },
     {
       "id": "12",
-      "userName": "Atsakimelis2000",
+      "userId": 0,
       "title": "Bandymas 6 EDIT2",
       "description": "Atsakymas 6 EDIT2",
       "postDate": "2023-12-05T11:45:19.953Z",
-      "votes": 7
+      "votes": 7,
+      "answers": [
+        {
+          "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f397",
+          "answer": "Atsakymas 1",
+          "answerDate": "2023-12-05T11:45:11.258Z",
+          "votes": 0
+        },
+        {
+          "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f39456",
+          "answer": "Atsakymas 2",
+          "answerDate": "2023-12-05T11:45:11.258Z",
+          "votes": 123
+        }
+      ]
     },
     {
       "id": "498b4816-4481-40ea-8fd2-40d2b1001e4a",
-      "userName": "Klausimelis2000",
+      "userId": 0,
       "title": "Kaip man padaryti tobulą forumą? EDIT1",
       "description": "Nukipijuoti geriausią variantą internete ir jį patobulinti. EDIT1",
       "postDate": "2023-12-05T12:29:15.680Z",
-      "votes": 1
+      "votes": 1,
+      "answers": []
     },
     {
       "id": "dcc56c62-6181-4ec4-9588-212641186f1d",
-      "userName": "Klausimelis2000",
+      "userId": 0,
       "title": "Testavimas",
       "description": "Ar turės žymą prijungtas useris užduodant klausimą?",
       "postDate": "2023-12-06T08:23:14.824Z",
-      "votes": 0
-    },
-    {
-      "id": "0a72b74a-8190-426b-aa14-65c14e5813cb",
-      "userName": "admin",
-      "title": "Bandomasis klausimas 1",
-      "description": "aaaaaaaaaaaaaaaa",
-      "postDate": "2023-12-06T13:09:40.850Z",
-      "votes": 0
+      "votes": 0,
+      "answers": []
     }
   ],
   "answers": [
     {
-      "id": "1",
-      "questionId": "1",
-      "userName": "Klausimelis2000",
+      "answerId": 1,
+      "questionId": 1,
+      "userId": 2,
       "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
       "answerDate": "2023-12-05T12:29:15.680Z",
-      "votes": 0
-    },
-    {
-      "id": "2",
-      "questionId": "2",
-      "userName": "Spurgyte3000",
-      "answer": "Pagal klausimą, kurį norite balsuoti, balsuoti per ateinančius prezidento rinkimus",
-      "answerDate": "2023-12-05T12:29:15.680Z",
-      "votes": 0
-    },
-    {
-      "id": "3",
-      "questionId": "1",
-      "userName": "Klausimelis2000",
-      "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
-      "answerDate": "2023-12-05T12:29:15.680Z",
-      "votes": 0
-    },
-    {
-      "id": "12",
-      "userName": "Klausimelis2000",
-      "questionId": "2",
-      "answer": "Bandomasis atsakymas į klausimą prisijungus.",
-      "answerDate": "2023-12-06T13:38:09.530Z",
-      "votes": 0
-    },
-    {
-      "id": "8bca40c8-0f1b-4759-90a7-748d47368dba",
-      "userName": "admin",
-      "questionId": "12",
-      "answer": "Bandomasis atsakymas į klausimą prisijungus.",
-      "answerDate": "2023-12-06T13:41:51.406Z",
-      "votes": 0
-    }
-  ],
-  "questionVotes": [
-    {
-      "voteId": 1,
-      "questionId": "1",
-      "votes": 1
-    },
-    {
-      "voteId": 2,
-      "questionId": "1",
-      "votes": 1
-    },
-    {
-      "voteId": 3,
-      "questionId": "1",
-      "votes": 1
-    }
-  ],
-  "answerVotes": [
-    {
-      "voteId": 1,
-      "answerId": "2",
-      "votes": 1,
-      "userName": "Klausimelis2000"
-    },
-    {
-      "voteId": 2,
-      "answerId": "3",
-      "votes": 1,
-      "userName": "Atsakimelis2000"
-    },
-    {
-      "voteId": 3,
-      "answerId": "12",
-      "votes": 1,
-      "userName": "Spurgyte3000"
+      "vote": 0
     }
   ]
 }

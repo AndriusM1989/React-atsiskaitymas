@@ -26,7 +26,7 @@ const EditQuestion = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [formValues, setFormValues] = useState({
-    name: "",
+    title: "",
     description: "",
   });
 
@@ -34,7 +34,7 @@ const EditQuestion = () => {
     fetch(`http://localhost:8080/questions/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        if (!data.name) {
+        if (!data.title) {
           navigate("/");
         }
         setFormValues({
@@ -44,7 +44,7 @@ const EditQuestion = () => {
   }, []);
 
   const validationSchema = Yup.object({
-    name: Yup.string()
+    title: Yup.string()
       .min(5, "Minimum length 5 symbols")
       .max(50, "Maximum length 50 symbols")
       .required("This field must be filled")
@@ -58,7 +58,7 @@ const EditQuestion = () => {
   return (
     <StyledEditFormPage>
       <h1>Edit Question</h1>
-      {formValues.name && (
+      {formValues.title && (
         <Formik
           initialValues={formValues}
           validationSchema={validationSchema}
@@ -78,7 +78,7 @@ const EditQuestion = () => {
         >
           {(props) => (
             <form onSubmit={props.handleSubmit}>
-              <FormikInput type="text" name="name" formik={props} />
+              <FormikInput type="text" name="title" formik={props} />
               <FormikInput type="text" name="description" formik={props} />
               <button type="Submit">Edit Question</button>
             </form>

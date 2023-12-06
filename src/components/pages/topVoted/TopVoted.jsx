@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
+import UsersContext from "../../../contexts/UsersContext";
 
 const StyledMain = styled.main`
   > div:first-child  {
@@ -39,6 +40,7 @@ const StyledMain = styled.main`
 
 const Main = () => {
   const { question } = useContext(QuestionContext);
+  const { loggedInUser } = useContext(UsersContext);
   const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
 
   return (
@@ -75,12 +77,16 @@ const Main = () => {
               </li>
             </ul>
           </nav>
-          <NavLink
-            to="/addQuestion"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Ask something
-          </NavLink>
+          {!loggedInUser ? (
+            <p>Log in to ask a question</p>
+          ) : (
+            <NavLink
+              to="/addQuestion"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Ask something
+            </NavLink>
+          )}
         </div>
       </div>
       <div>

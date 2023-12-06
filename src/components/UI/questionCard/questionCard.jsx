@@ -18,7 +18,7 @@ const QuestionCard = ({ data }) => {
     <StyledCard>
       <div>
         <p>Votes: {data.votes}</p>
-        <p>Answers: {data.answers.length}</p>
+        <p>Answers: </p>
       </div>
       <div>
         <h4>
@@ -29,13 +29,13 @@ const QuestionCard = ({ data }) => {
               textDecoration: "unset",
             }}
           >
-            {data.name}
+            {data.title}
           </Link>
         </h4>
         <p>{data.description}</p>
       </div>
       <div>
-        <p>Author: {data.userId}</p>
+        <p>Author: {data.userName}</p>
       </div>
     </StyledCard>
   );

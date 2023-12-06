@@ -3,14 +3,15 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
+import UsersContext from "../../../contexts/UsersContext";
 
 const StyledMain = styled.main`
-  > div:first-child  {
+  > div:first-child {
     > div {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      >a{
+      > a {
         text-decoration: none;
       }
       > nav {
@@ -22,7 +23,7 @@ const StyledMain = styled.main`
             > a {
               text-decoration: none;
             }
-            >a.active{
+            > a.active {
               color: red;
             }
           }
@@ -30,7 +31,7 @@ const StyledMain = styled.main`
       }
     }
   }
-  >div:last-child{
+  > div:last-child {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -39,6 +40,7 @@ const StyledMain = styled.main`
 
 const Main = () => {
   const { question } = useContext(QuestionContext);
+  const { loggedInUser } = useContext(UsersContext);
   const sortedQuestions = question.sort((a, b) => {
     return new Date(b.postDate) - new Date(a.postDate);
   });
@@ -77,12 +79,17 @@ const Main = () => {
               </li>
             </ul>
           </nav>
-          <NavLink
-            to="/addQuestion"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Ask something
-          </NavLink>
+
+          {!loggedInUser ? (
+            <p>Log in to ask a question</p>
+          ) : (
+            <NavLink
+              to="/addQuestion"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Ask something
+            </NavLink>
+          )}
         </div>
       </div>
       <div>

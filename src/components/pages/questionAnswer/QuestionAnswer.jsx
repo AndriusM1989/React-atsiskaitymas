@@ -5,6 +5,9 @@ import LoadingScreen from "../loadingScreen/LoadingScreen";
 import { useContext } from "react";
 import QuestionContext from "../../../contexts/QuestionContext";
 import UsersContext from "../../../contexts/UsersContext";
+import Answers from "../../UI/answers/Answers";
+import AnswerContext from "../../../contexts/AnswerContext";
+import AddAnswer from "../addAnswer/AddAnswer";
 
 const StyledSelectedQuestion = styled.main`
   > div.question {
@@ -15,16 +18,10 @@ const StyledSelectedQuestion = styled.main`
     }
   }
   > div.answer {
+    display: flex;
+    flex-direction: column;
     padding-left: 50px;
-    > div {
-      border: 1px solid black;
-      border-radius: 5px;
-
-      > div {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
+    gap: 10px;
   }
 `;
 const QuestionAnswer = () => {
@@ -32,6 +29,7 @@ const QuestionAnswer = () => {
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(true);
   const { setQuestion, QuestionActionTypes } = useContext(QuestionContext);
+  const { answer } = useContext(AnswerContext);
   const { loggedInUser } = useContext(UsersContext);
   const navigate = useNavigate();
 
@@ -47,18 +45,15 @@ const QuestionAnswer = () => {
     return setData(data);
   }
 
-  function Answer({ data }) {
-    return (
-      <div>
-        <h3>{data.userId}</h3>
-        <p>{data.answer}</p>
-        <div>
-          <p>{data.answerDate.substring(0, 10)}</p>
-          <p>{data.votes}</p>
-        </div>
-      </div>
-    );
-  }
+  const questionId = id;
+
+  const filteredAnswers = answer.filter((answer) => {
+    return answer.questionId === questionId;
+  });
+
+  const sortedAnswers = filteredAnswers.sort((a, b) => {
+    return new Date(b.answerDate) - new Date(a.answerDate);
+  });
 
   return (
     <>
@@ -66,15 +61,15 @@ const QuestionAnswer = () => {
       {!loading && (
         <StyledSelectedQuestion>
           <div className="question">
-            <h1>{data.name}</h1>
+            <h1>{data.title}</h1>
             <div>
               <p>Asked on: {data.postDate.substring(0, 10)}</p>
               <p>Modified on:</p>
             </div>
             <h3>{data.description}</h3>
             <div>
-              <p>Answer count: {data.answers.length}</p>
-              {loggedInUser.id === data.userId && (
+              <p>Answer count: {filteredAnswers.length} </p>
+              {loggedInUser.userName === data.userName && (
                 <div>
                   <button onClick={() => navigate(`/edit/${id}`)}>Edit</button>
                   <button
@@ -90,12 +85,18 @@ const QuestionAnswer = () => {
             </div>
           </div>
           <div className="answer">
-            {data.answers.length
-              ? data.answers.map((answer) => (
-                  <Answer key={answer.id} data={answer} />
-                ))
-              : "No comments so far..."}
+            {sortedAnswers.map((answer) => {
+              return <Answers key={answer.id} data={answer} />;
+            })}
           </div>
+          {!loggedInUser ? (
+            <p>Log in to answer</p>
+          ) : (
+            <div>
+            <AddAnswer/>
+          </div>
+          )}
+          
         </StyledSelectedQuestion>
       )}
     </>

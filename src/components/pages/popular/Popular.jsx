@@ -3,8 +3,11 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
+import UsersContext from "../../../contexts/UsersContext";
+import AnswerContext from "../../../contexts/AnswerContext";
 
 const StyledPopular = styled.main`
+
   > div:first-child {
     > div {
       display: flex;
@@ -39,9 +42,11 @@ const StyledPopular = styled.main`
 
 const Popular = () => {
   const { question } = useContext(QuestionContext);
-  const sortedQuestions = question.sort(
-    (a, b) => b.answers.length - a.answers.length
-  );
+  const { loggedInUser } = useContext(UsersContext);
+  const { answer } = useContext(AnswerContext);
+  // const sortedQuestions = question.sort(
+  //   (a, b) => b.answer.length - a.answer.length
+  // );
 
   return (
     <StyledPopular>
@@ -77,19 +82,23 @@ const Popular = () => {
               </li>
             </ul>
           </nav>
-          <NavLink
-            to="/addQuestion"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Ask something
-          </NavLink>
+          {!loggedInUser ? (
+            <p>Log in to ask a question</p>
+          ) : (
+            <NavLink
+              to="/addQuestion"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Ask something
+            </NavLink>
+          )}
         </div>
       </div>
-      <div>
+      {/* <div>
         {sortedQuestions.map((questions) => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
-      </div>
+      </div> */}
     </StyledPopular>
   );
 };

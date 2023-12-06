@@ -3,40 +3,28 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import FormikInput from "../../UI/input/FormikInput";
-import QuestionContext from "../../../contexts/QuestionContext";
+import AnswerContext from "../../../contexts/AnswerContext";
 import UsersContext from "../../../contexts/UsersContext";
 
-const StyledAddFormPage = styled.main`
-  > form {
-    max-width: 1440px;
-    > div {
-      display: grid;
-    }
-  }
-`;
-
-const AddQuestion = () => {
-  const { setQuestion, QuestionActionTypes } = useContext(QuestionContext);
+const AddAnswer = () => {
+  const { setAnswer, AnswerActionTypes } = useContext(AnswerContext);
   const { loggedInUser } = useContext(UsersContext);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const values = {
     id: uuid(),
+    questionId: id,
     userName: loggedInUser.userName,
-    title: "",
-    description: "",
-    postDate: new Date(),
+    answer: "",
+    answerDate: new Date(),
     votes: 0,
   };
 
   const validationSchema = Yup.object({
-    title: Yup.string()
-      .min(5, "Minimum length 5 symbols")
-      .max(50, "Maximum length 50 symbols")
-      .required("This field must be filled"),
-    description: Yup.string()
+    answer: Yup.string()
       .min(10, "Minimum length 10 symbols")
       .required("This field must be filled"),
   });
@@ -49,13 +37,14 @@ const AddQuestion = () => {
       const finalValues = {
         id: uuid(),
         userName: loggedInUser.userName,
+        questionId: id,
         ...values,
-        postDate: new Date(),
+        answerDate: new Date(),
         votes: 0,
       };
       console.log(finalValues);
-      setQuestion({
-        type: QuestionActionTypes.add,
+      setAnswer({
+        type: AnswerActionTypes.add,
         data: finalValues,
       });
       navigate("/");
@@ -63,15 +52,13 @@ const AddQuestion = () => {
   });
 
   return (
-    <StyledAddFormPage>
-      <h1>What do you want to ask?</h1>
+    <>
       <form onSubmit={formik.handleSubmit}>
-        <FormikInput type="text" name="title" formik={formik} />
-        <FormikInput type="text" name="description" formik={formik} />
-        <button type="Submit">Post Question</button>
+        <FormikInput type="text" name="answer" formik={formik} />
+        <button type="Submit">Post Answer</button>
       </form>
-    </StyledAddFormPage>
+    </>
   );
 };
 
-export default AddQuestion;
+export default AddAnswer;
