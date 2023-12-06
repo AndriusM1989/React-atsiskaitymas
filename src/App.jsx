@@ -7,6 +7,8 @@ import Popular from "./components/pages/popular/Popular";
 import TopVoted from "./components/pages/topVoted/TopVoted";
 import AddQuestion from "./components/pages/addQuestion/AddQuestion";
 import EditQuestion from "./components/pages/editQuestion/EditQuestion";
+import Login from "./components/pages/login/Login";
+import Register from "./components/pages/register/Register"
 
 function App() {
   return (
@@ -20,7 +22,11 @@ function App() {
         <Route path="/questionAnswer">
           <Route path=":id" element={<QuestionAnswer />} />
         </Route>
-          <Route path="edit/:id" element={<EditQuestion />}/>
+        <Route path="edit/:id" element={<EditQuestion />} />
+        <Route path="/user">
+          <Route path="login" element={<Login/>}/>
+          <Route path="register" element={<Register/>}/>
+        </Route>
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>

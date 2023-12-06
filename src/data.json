@@ -38,7 +38,7 @@
   "questions": [
     {
       "id": 1,
-      "userId": 2,
+      "userId": 0,
       "name": "Apie orus",
       "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
       "postDate": "2023-12-05T12:29:15.680Z",
@@ -55,7 +55,7 @@
     },
     {
       "id": 2,
-      "userId": 1,
+      "userId": 0,
       "name": "Apie politiką",
       "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
       "postDate": "2023-12-01",
@@ -72,6 +72,7 @@
     },
     {
       "id": "a27a6065-a451-4844-865a-664beee90e83",
+      "userId": 0,
       "name": "Bandymas 6 EDIT2",
       "description": "Atsakymas 6 EDIT2",
       "postDate": "2023-12-05T11:45:19.953Z",
@@ -93,11 +94,34 @@
     },
     {
       "id": "498b4816-4481-40ea-8fd2-40d2b1001e4a",
+      "userId": 0,
       "name": "Kaip man padaryti tobulą forumą? EDIT1",
       "description": "Nukipijuoti geriausią variantą internete ir jį patobulinti. EDIT1",
       "postDate": "2023-12-05T12:29:15.680Z",
       "votes": 1,
       "answers": []
+    },
+    {
+      "id": "dcc56c62-6181-4ec4-9588-212641186f1d",
+      "userId": 0,
+      "name": "Testavimas",
+      "description": "Ar turės žymą prijungtas useris užduodant klausimą?",
+      "postDate": "2023-12-06T08:23:14.824Z",
+      "votes": 0,
+      "answers": [
+        
+      ]
+    },
+    {
+      "id": "360087d5-27dc-424c-a89f-50f48611c063",
+      "userId": 1,
+      "name": "Bandomasis klausimas prisijungus",
+      "description": "Atsakymas prisijungus",
+      "postDate": "2023-12-06T08:28:45.132Z",
+      "votes": 0,
+      "answers": [
+        
+      ]
     }
   ]
 }

@@ -47,18 +47,6 @@ const QuestionAnswer = () => {
     return setData(data);
   }
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/questions/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-        if (!data.name) {
-          navigate("/");
-        }
-        setQuestion(data);
-      });
-  }, []);
-
   function Answer({ data }) {
     return (
       <div>
