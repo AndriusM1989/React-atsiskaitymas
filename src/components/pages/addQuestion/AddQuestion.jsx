@@ -29,7 +29,8 @@ const AddQuestion = () => {
     description: "",
     postDate: new Date(),
     votes: 0,
-    answers: [{}],
+    answers: [{
+    }],
   };
 
   const validationSchema = Yup.object({

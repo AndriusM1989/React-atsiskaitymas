@@ -1,22 +1,17 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import LoadingScreen from "../loadingScreen/LoadingScreen";
-import { v4 as uuid } from "uuid";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import FormikInput from "../../UI/input/FormikInput";
 import QuestionContext from "../../../contexts/QuestionContext";
 import UsersContext from "../../../contexts/UsersContext";
-import { Formik } from "formik";
-import * as Yup from "yup";
 
 const StyledSelectedQuestion = styled.main`
   > div.question {
     > div {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
   }
   > div.answer {
@@ -36,13 +31,9 @@ const QuestionAnswer = () => {
   const { id } = useParams();
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(true);
-
-  const validationSchema = Yup.object({
-    answer: Yup.string()
-      .min(5, "Minimum length 5 symbols")
-      .required("This field must be filled")
-      .trim(),
-  });
+  const { setQuestion, QuestionActionTypes } = useContext(QuestionContext);
+  const { loggedInUser } = useContext(UsersContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData().then(() => {
@@ -55,6 +46,18 @@ const QuestionAnswer = () => {
     const data = await res.json();
     return setData(data);
   }
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/questions/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+        if (!data.name) {
+          navigate("/");
+        }
+        setQuestion(data);
+      });
+  }, []);
 
   function Answer({ data }) {
     return (
@@ -80,16 +83,31 @@ const QuestionAnswer = () => {
               <p>Asked on: {data.postDate.substring(0, 10)}</p>
               <p>Modified on:</p>
             </div>
-            <p>{data.description}</p>
+            <h3>{data.description}</h3>
             <div>
               <p>Answer count: {data.answers.length}</p>
+              {loggedInUser.id === data.userId && (
+                <div>
+                  <button onClick={() => navigate(`/edit/${id}`)}>Edit</button>
+                  <button
+                    onClick={() => {
+                      setQuestion({ type: QuestionActionTypes.remove, id: id });
+                      navigate("/");
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-          {data.answers.length
-            ? data.answers.map((answer) => (
-                <Answer key={answer.id} data={answer} />
-              ))
-            : "No comments so far..."}
+          <div className="answer">
+            {data.answers.length
+              ? data.answers.map((answer) => (
+                  <Answer key={answer.id} data={answer} />
+                ))
+              : "No comments so far..."}
+          </div>
         </StyledSelectedQuestion>
       )}
     </>
