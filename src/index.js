@@ -6,17 +6,20 @@ import { QuestionProvider } from "./contexts/QuestionContext.jsx";
 import { UsersProvider } from "./contexts/UsersContext.jsx";
 import { AnswerProvider } from "./contexts/AnswerContext.jsx";
 import { VotesProvider } from "./contexts/VotesContext.jsx";
+import { QuestionVoteProvider } from "./contexts/QuestionVoteContext.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <UsersProvider>
     <QuestionProvider>
       <AnswerProvider>
-        <VotesProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </VotesProvider>
+        <QuestionVoteProvider>
+          <VotesProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </VotesProvider>
+        </QuestionVoteProvider>
       </AnswerProvider>
     </QuestionProvider>
   </UsersProvider>

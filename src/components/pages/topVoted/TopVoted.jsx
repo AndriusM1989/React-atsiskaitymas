@@ -4,14 +4,15 @@ import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
+import QuestionVoteContext from "../../../contexts/QuestionVoteContext";
 
 const StyledMain = styled.main`
-  > div:first-child  {
+  > div:first-child {
     > div {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      >a{
+      > a {
         text-decoration: none;
       }
       > nav {
@@ -23,7 +24,7 @@ const StyledMain = styled.main`
             > a {
               text-decoration: none;
             }
-            >a.active{
+            > a.active {
               color: red;
             }
           }
@@ -31,7 +32,7 @@ const StyledMain = styled.main`
       }
     }
   }
-  >div:last-child{
+  > div:last-child {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -40,15 +41,17 @@ const StyledMain = styled.main`
 
 const Main = () => {
   const { question } = useContext(QuestionContext);
+  const { questionVote } = useContext(QuestionVoteContext);
   const { loggedInUser } = useContext(UsersContext);
   const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
+  const sortedVotes = questionVote.sort((a, b) => b.id - a.id);
 
   return (
     <StyledMain>
       <div>
         <h1>Top Voted Questions</h1>
         <div>
-          <h3>23420394 questions</h3>
+          <h3>{question.length} questions</h3>
           <nav>
             <ul>
               <li>

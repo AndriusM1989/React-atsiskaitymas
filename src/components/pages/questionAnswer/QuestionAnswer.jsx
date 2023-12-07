@@ -45,10 +45,8 @@ const QuestionAnswer = () => {
     return setData(data);
   }
 
-  const questionId = id;
-
   const filteredAnswers = answer.filter((answer) => {
-    return answer.questionId === questionId;
+    return answer.questionId === id;
   });
 
   const sortedAnswers = filteredAnswers.sort((a, b) => {
@@ -63,8 +61,12 @@ const QuestionAnswer = () => {
           <div className="question">
             <h1>{data.title}</h1>
             <div>
-              <p>Asked on: {data.postDate.substring(0, 10)}</p>
-              <p>Modified on:</p>
+              <p>Asked on: {new Date(data.postDate).toLocaleString()}</p>
+              <p>
+                {data.edited
+                  ? "Modified on: " + new Date(data.edited).toLocaleString()
+                  : " "}
+              </p>
             </div>
             <h3>{data.description}</h3>
             <div>
@@ -74,7 +76,10 @@ const QuestionAnswer = () => {
                   <button onClick={() => navigate(`/edit/${id}`)}>Edit</button>
                   <button
                     onClick={() => {
-                      setQuestion({ type: QuestionActionTypes.remove, id: id });
+                      setQuestion({
+                        type: QuestionActionTypes.remove,
+                        id: id,
+                      });
                       navigate("/");
                     }}
                   >
@@ -93,10 +98,9 @@ const QuestionAnswer = () => {
             <p>Log in to answer</p>
           ) : (
             <div>
-            <AddAnswer/>
-          </div>
+              <AddAnswer />
+            </div>
           )}
-          
         </StyledSelectedQuestion>
       )}
     </>

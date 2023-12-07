@@ -27,8 +27,7 @@ const AddQuestion = () => {
     userName: loggedInUser.userName,
     title: "",
     description: "",
-    postDate: new Date(),
-    votes: 0,
+    postDate: new Date()
   };
 
   const validationSchema = Yup.object({
@@ -50,8 +49,7 @@ const AddQuestion = () => {
         id: uuid(),
         userName: loggedInUser.userName,
         ...values,
-        postDate: new Date(),
-        votes: 0,
+        postDate: new Date()
       };
       console.log(finalValues);
       setQuestion({

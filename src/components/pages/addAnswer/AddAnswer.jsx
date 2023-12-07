@@ -19,8 +19,7 @@ const AddAnswer = () => {
     questionId: id,
     userName: loggedInUser.userName,
     answer: "",
-    answerDate: new Date(),
-    votes: 0,
+    answerDate: new Date()
   };
 
   const validationSchema = Yup.object({
@@ -33,21 +32,18 @@ const AddAnswer = () => {
     initialValues: values,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
       const finalValues = {
         id: uuid(),
         userName: loggedInUser.userName,
         questionId: id,
         ...values,
-        answerDate: new Date(),
-        votes: 0,
+        answerDate: new Date()
       };
-      console.log(finalValues);
       setAnswer({
         type: AnswerActionTypes.add,
         data: finalValues,
       });
-      navigate("/");
+      navigate(`/`);
     },
   });
 

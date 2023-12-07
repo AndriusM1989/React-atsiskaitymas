@@ -1,10 +1,10 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import FormikInput from "../../UI/input/FormikInput";
-import QuestionContext from "../../../contexts/QuestionContext";
+import AnswerContext from "../../../contexts/AnswerContext";
 
 const StyledEditFormPage = styled.main`
   display: flex;
@@ -21,69 +21,63 @@ const StyledEditFormPage = styled.main`
   }
 `;
 
-const EditQuestion = () => {
-  const { question, setQuestion, QuestionActionTypes } = useContext(QuestionContext);
+const EditAnswer = ({ data }) => {
+  const { answer, setAnswer, AnswerActionTypes } = useContext(AnswerContext);
   const navigate = useNavigate();
   const { id } = useParams();
   const [formValues, setFormValues] = useState({
-    title: "",
-    description: "",
+    answer: "",
   });
-  console.log(question);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/questions/${id}`)
+    fetch(`http://localhost:8080/answers/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        if (!data.title) {
+        if (!data.answer) {
           navigate("/");
         }
         setFormValues({
           ...data,
         });
+        console.log(data);
       });
   }, []);
 
   const validationSchema = Yup.object({
-    title: Yup.string()
+    answer: Yup.string()
       .min(5, "Minimum length 5 symbols")
-      .max(50, "Maximum length 50 symbols")
-      .required("This field must be filled")
-      .trim(),
-    description: Yup.string()
-      .min(10, "Minimum length 10 symbols")
       .required("This field must be filled")
       .trim(),
   });
 
   return (
     <StyledEditFormPage>
-      <h1>Edit Question</h1>
-      {formValues.title && (
+      <h1>Edit Answer</h1>
+      {formValues.answer && (
         <Formik
           initialValues={formValues}
           validationSchema={validationSchema}
           onSubmit={(values) => {
+            console.log(values);
             const finalValues = {
               ...values,
-              edited: values.title !== question.title || 
-              values.description !== question.description
+              edited: values.answer !== answer.answer 
               ? new Date()
               : ''
             };
-            setQuestion({
-              type: QuestionActionTypes.edit,
+            console.log(finalValues);
+            setAnswer({
+              type: AnswerActionTypes.edit,
               id: id,
               data: finalValues,
             });
-            navigate(`/questionAnswer/${id}`);
+            navigate(`/`);
           }}
         >
           {(props) => (
             <form onSubmit={props.handleSubmit}>
-              <FormikInput type="text" name="title" formik={props} />
-              <FormikInput type="text" name="description" formik={props} />
-              <button type="Submit">Edit Question</button>
+              <FormikInput type="text" name="answer" formik={props} />
+              <button type="Submit">Edit Answer</button>
             </form>
           )}
         </Formik>
@@ -92,4 +86,4 @@ const EditQuestion = () => {
   );
 };
 
-export default EditQuestion;
+export default EditAnswer;

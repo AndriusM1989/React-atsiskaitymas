@@ -50,7 +50,7 @@ const Main = () => {
       <div>
         <h1>Newest Questions</h1>
         <div>
-          <h3>23420394 questions</h3>
+        <h3>{question.length} questions</h3>
           <nav>
             <ul>
               <li>
