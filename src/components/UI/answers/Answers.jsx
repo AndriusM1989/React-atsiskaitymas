@@ -2,9 +2,9 @@ import styled from "styled-components";
 import AnswerContext from "../../../contexts/AnswerContext";
 import UserContext from "../../../contexts/UsersContext";
 import { useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import VotesContext from "../../../contexts/VotesContext";
-import VoteCard from "../vote/VoteCard";
+import { v4 as uuid } from "uuid";
 
 const StyledAnswers = styled.div`
   border: 1px solid black;
@@ -28,7 +28,21 @@ const Answers = ({ data }) => {
     return item.answerId === data.id;
   });
 
-  console.log(data.id);
+  const { setVote, VotesActionTypes } = useContext(VotesContext);
+  const handleOnclick = () => {
+    const finalValues = {
+      id: uuid(),
+      answerId: data.id,
+      votes: 1,
+      userName: loggedInUser.userName,
+    };
+    setVote({
+      type: VotesActionTypes.add,
+      data: finalValues,
+    });
+    navigate(`/questionAnswer/${id}`);
+    console.log(finalValues);
+  };
 
   return (
     <StyledAnswers>
@@ -36,9 +50,19 @@ const Answers = ({ data }) => {
       <p>{data.answer}</p>
       <div>
         <p>{new Date(data.answerDate).toLocaleDateString()}</p>
-        {filteredData.map((votes) => {
-          return <VoteCard key={votes.voteId} data={votes} />;
-        })}
+        {!loggedInUser ? (
+          <p>Log in to vote</p>
+        ) : (
+          <button onClick={handleOnclick}>Add Vote</button>
+        )}
+        <p>
+          Votes:{" "}
+          {
+            filteredData.map((votes) => {
+              return <div key={votes.voteId} data={votes}></div>;
+            }).length
+          }
+        </p>
       </div>
       {loggedInUser.userName === data.userName && (
         <div>

@@ -125,6 +125,14 @@
       "answer": "Bandomasis atsakymas į klausimą prisijungus.",
       "answerDate": "2023-12-06T13:41:51.406Z",
       "votes": 0
+    },
+    {
+      "id": "4a7a7ce5-be14-438e-8b27-5c581bacf1b3",
+      "userName": "admin",
+      "questionId": "12",
+      "answer": "Bandomasis atsakymas i klausima.",
+      "answerDate": "2023-12-07T08:18:52.527Z",
+      "votes": 0
     }
   ],
   "questionVotes": [
@@ -146,22 +154,52 @@
   ],
   "answerVotes": [
     {
-      "voteId": 1,
+      "id": 1,
       "answerId": "2",
       "votes": 1,
       "userName": "Klausimelis2000"
     },
     {
-      "voteId": 2,
-      "answerId": "3",
+      "id": 2,
+      "answerId": "2",
       "votes": 1,
       "userName": "Atsakimelis2000"
     },
     {
-      "voteId": 3,
+      "id": 3,
       "answerId": "12",
       "votes": 1,
       "userName": "Spurgyte3000"
+    },
+    {
+      "id": "a0b62c9b-151b-4e3a-9378-5dcec77d08d2",
+      "answerId": "4a7a7ce5-be14-438e-8b27-5c581bacf1b3",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "4096e78b-d39e-46b4-8738-282ece87f758",
+      "answerId": "8bca40c8-0f1b-4759-90a7-748d47368dba",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "4dfb64c0-4454-4fb8-af80-8e9998b4abfe",
+      "answerId": "8bca40c8-0f1b-4759-90a7-748d47368dba",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "8f9a8ca5-04e8-4e9c-b128-0bc082b813e7",
+      "answerId": "8bca40c8-0f1b-4759-90a7-748d47368dba",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "9a3d34f1-fb07-46d1-b956-f00ecb818f96",
+      "answerId": "4a7a7ce5-be14-438e-8b27-5c581bacf1b3",
+      "votes": 1,
+      "userName": "admin"
     }
   ]
 }
