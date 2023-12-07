@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
-import QuestionVoteContext from "../../../contexts/QuestionVoteContext";
+import AnswerContext from "../../../contexts/AnswerContext";
 
 const StyledUnAnsweredQuestions = styled.main`
   > div:first-child {
@@ -41,9 +41,16 @@ const StyledUnAnsweredQuestions = styled.main`
 
 const UnAnsweredQuestions = () => {
   const { question } = useContext(QuestionContext);
-  const { questionVote } = useContext(QuestionVoteContext);
   const { loggedInUser } = useContext(UsersContext);
-  const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
+  const { answer } = useContext(AnswerContext);
+
+  const questionsWithAnswers = question.map((q) => {
+    q.answers = answer.filter((a) => a.questionId === q.id);
+    return q;
+  });
+  const questionsWithNoAnswers = questionsWithAnswers.filter(
+    (q) => q.answers.length === 0
+  );
 
   return (
     <StyledUnAnsweredQuestions>
@@ -100,7 +107,7 @@ const UnAnsweredQuestions = () => {
         </div>
       </div>
       <div>
-        {sortedQuestions.map((questions) => {
+        {questionsWithNoAnswers.map((questions) => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>

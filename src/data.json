@@ -61,21 +61,6 @@
   ],
   "answers": [
     {
-      "id": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "userName": "admin",
-      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
-      "answer": "Atsakymas 1 redaguotas",
-      "answerDate": "2023-12-07T12:01:56.772Z",
-      "edited": "2023-12-07T18:57:46.997Z"
-    },
-    {
-      "id": "71a3c935-24de-4c43-bb50-2ad0815f4005",
-      "userName": "admin",
-      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
-      "answer": "Atsakymas 2",
-      "answerDate": "2023-12-07T12:03:11.008Z"
-    },
-    {
       "id": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",
       "userName": "admin",
       "questionId": "ab7519d0-e21f-477a-8b12-cc54f4498979",
@@ -119,66 +104,6 @@
     }
   ],
   "answerVotes": [
-    {
-      "id": "5638cbbf-efd9-46cd-9a27-6b17b8d36755",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "7b1c9f97-ab99-4129-84ed-8dcc03d2b76f",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "baa323f9-4115-4a2f-b0cc-7d00e5f813e4",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "bbfe7e01-52b1-40e3-8101-472ed0ebc070",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "0744fce7-a970-4d28-85ed-d603f21b2979",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "f9eb8857-73dd-4bdc-99de-63132cbf351b",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "8c58c38a-ef4e-4523-81dc-387fe14897b4",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "cd477454-9309-42e8-8816-c88e8f9b4a9a",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "80a0b553-94da-4092-950d-913797674d9b",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "ebd66d58-30d4-422a-baae-2ec3eb8fe82b",
-      "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
-      "votes": 1,
-      "userName": "admin"
-    },
     {
       "id": "8ab2d508-509a-4f1d-b9ab-5835357aa82a",
       "answerId": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",

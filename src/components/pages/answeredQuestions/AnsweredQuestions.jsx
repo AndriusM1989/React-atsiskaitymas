@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
-import QuestionVoteContext from "../../../contexts/QuestionVoteContext";
+import AnswerContext from "../../../contexts/AnswerContext";
 
 const StyledAnsweredQuestions = styled.main`
   > div:first-child {
@@ -41,9 +41,17 @@ const StyledAnsweredQuestions = styled.main`
 
 const AnsweredQuestions = () => {
   const { question } = useContext(QuestionContext);
-  const { questionVote } = useContext(QuestionVoteContext);
+  const { answer } = useContext(AnswerContext);
   const { loggedInUser } = useContext(UsersContext);
-  const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
+
+  const questionsWithAnswers = question.map((q) => {
+    q.answers = answer.filter((a) => a.questionId === q.id);
+    return q;
+  });
+
+  const questionsWithAnswersFiltered = questionsWithAnswers.filter(
+    (q) => q.answers.length > 0
+  );
 
   return (
     <StyledAnsweredQuestions>
@@ -100,7 +108,7 @@ const AnsweredQuestions = () => {
         </div>
       </div>
       <div>
-        {sortedQuestions.map((questions) => {
+        {questionsWithAnswersFiltered.map((questions) => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>

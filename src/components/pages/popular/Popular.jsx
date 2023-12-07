@@ -5,6 +5,7 @@ import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
 import QuestionVoteContext from "../../../contexts/QuestionVoteContext";
+import AnswerContext from "../../../contexts/AnswerContext";
 
 const StyledPopular = styled.main`
   > div:first-child {
@@ -40,10 +41,19 @@ const StyledPopular = styled.main`
 `;
 
 const Popular = () => {
-  const { question } = useContext(QuestionContext);
-  const { questionVote } = useContext(QuestionVoteContext);
   const { loggedInUser } = useContext(UsersContext);
-  const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
+  const { question } = useContext(QuestionContext);
+  const { answer } = useContext(AnswerContext);
+
+const questionsWithAnswers = question.map((q) => {
+  q.answers = answer.filter((a) => a.questionId === q.id);
+  return q;
+});
+
+const sortedQuestions = questionsWithAnswers.sort((a, b) => {
+  return b.answers.length - a.answers.length;
+});
+
 
   return (
     <StyledPopular>

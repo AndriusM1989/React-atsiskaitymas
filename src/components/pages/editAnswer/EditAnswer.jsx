@@ -39,7 +39,6 @@ const EditAnswer = ({ data }) => {
         setFormValues({
           ...data,
         });
-        console.log(data);
       });
   }, []);
 
@@ -58,14 +57,11 @@ const EditAnswer = ({ data }) => {
           initialValues={formValues}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            console.log(values);
             const finalValues = {
               ...values,
-              edited: values.answer !== answer.answer 
-              ? new Date()
-              : ''
+              edited: values.answer !== answer.answer ? new Date() : "",
             };
-            console.log(finalValues);
+
             setAnswer({
               type: AnswerActionTypes.edit,
               id: id,
