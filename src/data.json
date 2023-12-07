@@ -44,12 +44,12 @@
       "postDate": "2023-12-07T11:48:31.556Z"
     },
     {
-      "title": "Bandomasis klausimas 5",
+      "title": "Bandomasis klausimas 8",
       "description": "Bandomojo klausimas teksas ",
       "id": "ab7519d0-e21f-477a-8b12-cc54f4498979",
       "userName": "admin",
       "postDate": "2023-12-07T12:03:54.624Z",
-      "edited": "2023-12-07T18:06:59.760Z"
+      "edited": "2023-12-07T18:21:28.421Z"
     },
     {
       "id": "44b44bc7-58d8-42d3-acf8-28046ffbcc21",
@@ -64,8 +64,9 @@
       "id": "1bc495cb-ca93-4046-85ad-315617934a0d",
       "userName": "admin",
       "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
-      "answer": "Atsakymas 1",
-      "answerDate": "2023-12-07T12:01:56.772Z"
+      "answer": "Atsakymas 1 redaguotas",
+      "answerDate": "2023-12-07T12:01:56.772Z",
+      "edited": "2023-12-07T18:57:46.997Z"
     },
     {
       "id": "71a3c935-24de-4c43-bb50-2ad0815f4005",
@@ -73,20 +74,6 @@
       "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
       "answer": "Atsakymas 2",
       "answerDate": "2023-12-07T12:03:11.008Z"
-    },
-    {
-      "id": "7686f392-8bcc-419f-b448-0ad258fba095",
-      "userName": "admin",
-      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
-      "answer": "Atsakymas 3",
-      "answerDate": "2023-12-07T12:03:17.682Z"
-    },
-    {
-      "id": "5a095321-c694-478c-a8b4-9fe488782f72",
-      "userName": "admin",
-      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
-      "answer": "Atsakymas 4",
-      "answerDate": "2023-12-07T12:03:25.785Z"
     },
     {
       "id": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",
@@ -132,30 +119,6 @@
     }
   ],
   "answerVotes": [
-    {
-      "id": "4124c481-f1aa-49de-ae44-8e4b91fb6683",
-      "answerId": "5a095321-c694-478c-a8b4-9fe488782f72",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "47555238-ae3d-4a5d-a87c-e74d534be69e",
-      "answerId": "5a095321-c694-478c-a8b4-9fe488782f72",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "80696dbf-6e6d-4a5a-992c-b9bca9b3631e",
-      "answerId": "5a095321-c694-478c-a8b4-9fe488782f72",
-      "votes": 1,
-      "userName": "admin"
-    },
-    {
-      "id": "adc4f7d4-0521-479b-bc4c-f05412ceeca4",
-      "answerId": "5a095321-c694-478c-a8b4-9fe488782f72",
-      "votes": 1,
-      "userName": "admin"
-    },
     {
       "id": "5638cbbf-efd9-46cd-9a27-6b17b8d36755",
       "answerId": "1bc495cb-ca93-4046-85ad-315617934a0d",
@@ -221,18 +184,6 @@
       "answerId": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",
       "votes": 1,
       "userName": "admin"
-    },
-    {
-      "id": "610e4ae1-5a59-4784-9cf5-55e6ec3f8a13",
-      "answerId": "5a095321-c694-478c-a8b4-9fe488782f72",
-      "votes": 1,
-      "userName": "Klausimelis2000"
-    },
-    {
-      "id": "6a097a73-3466-41fe-bdd1-7f7c9fae05b8",
-      "answerId": "7686f392-8bcc-419f-b448-0ad258fba095",
-      "votes": 1,
-      "userName": "Klausimelis2000"
     },
     {
       "id": "89d8fc1a-dda4-4dac-96d3-8012c1437583",

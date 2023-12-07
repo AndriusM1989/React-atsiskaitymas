@@ -6,7 +6,7 @@ import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
 import QuestionVoteContext from "../../../contexts/QuestionVoteContext";
 
-const StyledPopular = styled.main`
+const StyledAnsweredQuestions = styled.main`
   > div:first-child {
     > div {
       display: flex;
@@ -39,16 +39,16 @@ const StyledPopular = styled.main`
   }
 `;
 
-const Popular = () => {
+const AnsweredQuestions = () => {
   const { question } = useContext(QuestionContext);
   const { questionVote } = useContext(QuestionVoteContext);
   const { loggedInUser } = useContext(UsersContext);
   const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
 
   return (
-    <StyledPopular>
+    <StyledAnsweredQuestions>
       <div>
-        <h1>Popular Questions</h1>
+        <h1>Answered Questions</h1>
         <div>
           <h3>{question.length} questions</h3>
           <nav>
@@ -104,8 +104,8 @@ const Popular = () => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>
-    </StyledPopular>
+    </StyledAnsweredQuestions>
   );
 };
 
-export default Popular;
+export default AnsweredQuestions;

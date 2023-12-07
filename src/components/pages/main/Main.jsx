@@ -71,10 +71,18 @@ const Main = () => {
               </li>
               <li>
                 <NavLink
-                  to="/topVoted"
+                  to="/answeredQuestions"
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
-                  Top voted
+                  Answered
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/unAnsweredQuestions"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Un Answered
                 </NavLink>
               </li>
             </ul>

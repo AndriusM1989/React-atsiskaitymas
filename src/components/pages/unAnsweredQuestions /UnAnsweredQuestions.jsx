@@ -6,7 +6,7 @@ import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
 import QuestionVoteContext from "../../../contexts/QuestionVoteContext";
 
-const StyledMain = styled.main`
+const StyledUnAnsweredQuestions = styled.main`
   > div:first-child {
     > div {
       display: flex;
@@ -39,17 +39,16 @@ const StyledMain = styled.main`
   }
 `;
 
-const Main = () => {
+const UnAnsweredQuestions = () => {
   const { question } = useContext(QuestionContext);
   const { questionVote } = useContext(QuestionVoteContext);
   const { loggedInUser } = useContext(UsersContext);
   const sortedQuestions = question.sort((a, b) => b.votes - a.votes);
-  const sortedVotes = questionVote.sort((a, b) => b.id - a.id);
 
   return (
-    <StyledMain>
+    <StyledUnAnsweredQuestions>
       <div>
-        <h1>Top Voted Questions</h1>
+        <h1>Un Answered Questions</h1>
         <div>
           <h3>{question.length} questions</h3>
           <nav>
@@ -72,10 +71,18 @@ const Main = () => {
               </li>
               <li>
                 <NavLink
-                  to="/topVoted"
+                  to="/answeredQuestions"
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
-                  Top voted
+                  Answered
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/unAnsweredQuestions"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Un Answered
                 </NavLink>
               </li>
             </ul>
@@ -97,8 +104,8 @@ const Main = () => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>
-    </StyledMain>
+    </StyledUnAnsweredQuestions>
   );
 };
 
-export default Main;
+export default UnAnsweredQuestions;

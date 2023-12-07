@@ -11,15 +11,15 @@ Funkcionalumas:
     + Registruotis 
     + Prisijungti
     + Užduoti naują klausimą (tik prisijungus)
-    Redaguoti užduotą klausimą (UI turi matytis, kad klausimas buvo redaguotas) (tik prisijungus, tik tam vartotojui, kuris klausimą uždavė)
+    +Redaguoti užduotą klausimą (UI turi matytis, kad klausimas buvo         redaguotas) (tik prisijungus, tik tam vartotojui, kuris klausimą uždavė)
     + Ištrinti klausimą (tik prisijungus, tik tam vartotojui, kuris klausimą uždavė)
     + Atsakyti į užduotą klausimą (komentuoti) (tik prisijungus)
-    Redaguoti atsakymą (taip pat turi matytis, kad atsakymas buvo redaguotas) (tik prisijungus, tik tam vartotojui, kuris atsakymą parašė)
-    Ištrinti atsakymą (tik prisijungus, tik tam vartotojui, kuris atsakymą parašė)
+    +Redaguoti atsakymą (taip pat turi matytis, kad atsakymas buvo redaguotas) (tik prisijungus, tik tam vartotojui, kuris atsakymą parašė)
+    +Ištrinti atsakymą (tik prisijungus, tik tam vartotojui, kuris atsakymą parašė)
     Žymėti/atžymėti patinkančius ir nepatinkančius atsakymus ir klausimus (like/dislike) (tik prisijungus)
     Peržiūrėti klausimų sąrašą su galimybe rikiuoti pagal klausimo datą ir/arba atsakymų skaičių (didėjimo arba mažėjimo tvarka)
     Filtruoti atsakytus arba neatsakytus klausimus
-    Peržiūrėti klausimus ir jų atsakymus
+    +Peržiūrėti klausimus ir jų atsakymus
 
 Forumo projektas sudeda iš frontend'o ir backend'o dalių:
     Backend'ą ir DB atstos JSON-server'is.
