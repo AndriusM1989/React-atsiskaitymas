@@ -29,7 +29,6 @@ const QuestionCard = ({ data }) => {
   const filteredData = Object.values(questionVote).filter((item) => {
     return item.questionId === data.id;
   });
-
   const handleOnclick = () => {
     const finalValues = {
       id: uuid(),
@@ -70,7 +69,7 @@ const QuestionCard = ({ data }) => {
           </div>
         </div>
         <p>
-          Answers:
+          Answers: {" "}
           {
             filteredAnswer.map((answers) => {
               return <div key={answers.questionId} data={answers}></div>;

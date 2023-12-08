@@ -32,7 +32,7 @@
       "email": "a@a.com",
       "passwordNormal": "admin",
       "password": "$2a$08$zCOTcOiGYiyt0A2YDH/aAuHE1p960p/mCDQJlJFijcerHtAma40la",
-      "profilePicture": "https://cdn.vectorstock.com/i/preview-1x/34/96/flat-business-man-user-profile-avatar-in-suit-vector-4333496.jpg"
+      "profilePicture": "https://t4.ftcdn.net/jpg/02/76/69/57/360_F_276695760_6tzx5O9A6C60SmvRzuwEO51h3syyPEmM.jpg"
     }
   ],
   "questions": [
@@ -99,6 +99,12 @@
     {
       "id": "61ed0e9e-eed5-4233-813e-24753a5f4412",
       "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "85d96d38-c6f9-4edd-83d6-b6fb040b8034",
+      "questionId": "44b44bc7-58d8-42d3-acf8-28046ffbcc21",
       "votes": 1,
       "userName": "admin"
     }

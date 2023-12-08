@@ -57,55 +57,7 @@ const AnsweredQuestions = () => {
     <StyledAnsweredQuestions>
       <div>
         <h1>Answered Questions</h1>
-        <div>
-          <h3>{question.length} questions</h3>
-          <nav>
-            <ul>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Newest
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/popular"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Popular
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/answeredQuestions"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Answered
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/unAnsweredQuestions"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Un Answered
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          {!loggedInUser ? (
-            <p>Log in to ask a question</p>
-          ) : (
-            <NavLink
-              to="/addQuestion"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Ask something
-            </NavLink>
-          )}
-        </div>
+        <h3>{question.length} questions</h3>
       </div>
       <div>
         {questionsWithAnswersFiltered.map((questions) => {

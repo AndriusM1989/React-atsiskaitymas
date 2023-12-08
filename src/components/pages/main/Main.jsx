@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
+import { click } from "@testing-library/user-event/dist/click";
 
 const StyledMain = styled.main`
   > div:first-child {
@@ -49,56 +50,7 @@ const Main = () => {
     <StyledMain>
       <div>
         <h1>Newest Questions</h1>
-        <div>
         <h3>{question.length} questions</h3>
-          <nav>
-            <ul>
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Newest
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/popular"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Popular
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/answeredQuestions"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Answered
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/unAnsweredQuestions"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Un Answered
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-
-          {!loggedInUser ? (
-            <p>Log in to ask a question</p>
-          ) : (
-            <NavLink
-              to="/addQuestion"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Ask something
-            </NavLink>
-          )}
-        </div>
       </div>
       <div>
         {sortedQuestions.map((questions) => {
