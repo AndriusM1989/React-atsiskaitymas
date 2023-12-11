@@ -8,6 +8,20 @@ import FormikInput from "../../UI/input/FormikInput";
 import AnswerContext from "../../../contexts/AnswerContext";
 import UsersContext from "../../../contexts/UsersContext";
 
+const Container = styled.div`
+>form{
+  display: grid;
+  width: 100%;
+  >div{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+`;
+
+
 const AddAnswer = () => {
   const { setAnswer, AnswerActionTypes } = useContext(AnswerContext);
   const { loggedInUser } = useContext(UsersContext);
@@ -48,12 +62,12 @@ const AddAnswer = () => {
   });
 
   return (
-    <>
+    <Container>
       <form onSubmit={formik.handleSubmit}>
         <FormikInput type="text" name="answer" formik={formik} />
         <button type="Submit">Post Answer</button>
       </form>
-    </>
+    </Container>
   );
 };
 

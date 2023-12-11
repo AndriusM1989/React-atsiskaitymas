@@ -10,8 +10,9 @@ import AnswerContext from "../../../contexts/AnswerContext";
 const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  border: 1px solid red;
   border-radius: 5px;
+  
   > div:nth-child(1) {
     display: flex;
     justify-content: space-between;

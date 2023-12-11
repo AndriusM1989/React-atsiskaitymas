@@ -10,6 +10,7 @@ import AnswerContext from "../../../contexts/AnswerContext";
 import AddAnswer from "../addAnswer/AddAnswer";
 
 const StyledSelectedQuestion = styled.main`
+color: white;
   > div.question {
     > div {
       display: flex;
@@ -23,6 +24,7 @@ const StyledSelectedQuestion = styled.main`
     padding-left: 50px;
     gap: 10px;
   }
+
 `;
 const QuestionAnswer = () => {
   const { id } = useParams();
