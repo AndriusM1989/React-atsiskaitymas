@@ -32,39 +32,107 @@
       "email": "a@a.com",
       "passwordNormal": "admin",
       "password": "$2a$08$zCOTcOiGYiyt0A2YDH/aAuHE1p960p/mCDQJlJFijcerHtAma40la",
-      "profilePicture": "https://cdn.vectorstock.com/i/preview-1x/34/96/flat-business-man-user-profile-avatar-in-suit-vector-4333496.jpg"
+      "profilePicture": "https://t4.ftcdn.net/jpg/02/76/69/57/360_F_276695760_6tzx5O9A6C60SmvRzuwEO51h3syyPEmM.jpg"
     }
   ],
   "questions": [
     {
-      "id": 1,
-      "userId": 2,
-      "name": "Apie orus",
-      "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
-      "postDate": "2023-12-02",
-      "vote": 0,
-      "answer": {
-        "id": 1,
-        "userId": 2,
-        "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
-        "answerDate": "2023-12-02",
-        "vote": 0
-      }
+      "id": "59ead536-71ae-4a79-8484-5b555913e0d4",
+      "userName": "admin",
+      "title": "Bandomasis klausimas 1",
+      "description": "Bandomojo klausimas teksas",
+      "postDate": "2023-12-07T11:48:31.556Z"
     },
     {
-      "id": 2,
-      "userId": 1,
-      "name": "Apie politiką",
-      "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
-      "postDate": "2023-12-01",
-      "vote": 0,
-      "answer": {
-        "id": 1,
-        "userId": 2,
-        "answer": "Gerų kandidatų nėra, todėl reikia balsuoti už geriausią iš blogų. Svarbu, kad ne konservatoriai...",
-        "answerDate": "2023-12-01",
-        "vote": 0
-      }
+      "title": "Bandomasis klausimas 8",
+      "description": "Bandomojo klausimas teksas ",
+      "id": "ab7519d0-e21f-477a-8b12-cc54f4498979",
+      "userName": "admin",
+      "postDate": "2023-12-07T12:03:54.624Z",
+      "edited": "2023-12-07T18:21:28.421Z"
+    },
+    {
+      "id": "44b44bc7-58d8-42d3-acf8-28046ffbcc21",
+      "userName": "Klausimelis2000",
+      "title": "Bandomasis klausimas 3 koregavimas",
+      "description": "Bandomojo klausimas teksas",
+      "postDate": "2023-12-07T12:04:34.060Z"
+    }
+  ],
+  "answers": [
+    {
+      "id": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",
+      "userName": "admin",
+      "questionId": "ab7519d0-e21f-477a-8b12-cc54f4498979",
+      "answer": "Atsakymas 3",
+      "answerDate": "2023-12-07T12:04:01.518Z",
+      "edited": "2023-12-07T18:06:19.646Z"
+    },
+    {
+      "id": "59c3f7ee-21a8-437e-b665-b06d750a77ec",
+      "userName": "Klausimelis2000",
+      "questionId": "44b44bc7-58d8-42d3-acf8-28046ffbcc21",
+      "answer": "Atsakymas 1 redaguotas antrą kart",
+      "answerDate": "2023-12-07T12:04:43.611Z"
+    },
+    {
+      "id": "d975aa70-e8b6-4a49-8bab-2a9d89006770",
+      "userName": "Klausimelis2000",
+      "questionId": "ab7519d0-e21f-477a-8b12-cc54f4498979",
+      "answer": "Atsakymas 2",
+      "answerDate": "2023-12-07T12:05:01.471Z"
+    }
+  ],
+  "questionVotes": [
+    {
+      "id": "53252bcf-4efa-4ade-a269-4016aa55964c",
+      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "4bf8dd8f-cb61-462a-9b1e-6fc2e1a6b4ae",
+      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "61ed0e9e-eed5-4233-813e-24753a5f4412",
+      "questionId": "59ead536-71ae-4a79-8484-5b555913e0d4",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "85d96d38-c6f9-4edd-83d6-b6fb040b8034",
+      "questionId": "44b44bc7-58d8-42d3-acf8-28046ffbcc21",
+      "votes": 1,
+      "userName": "admin"
+    }
+  ],
+  "answerVotes": [
+    {
+      "id": "8ab2d508-509a-4f1d-b9ab-5835357aa82a",
+      "answerId": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",
+      "votes": 1,
+      "userName": "admin"
+    },
+    {
+      "id": "89d8fc1a-dda4-4dac-96d3-8012c1437583",
+      "answerId": "c16ca7e2-49da-4d6c-a34c-bb4b3a1c5646",
+      "votes": 1,
+      "userName": "Klausimelis2000"
+    },
+    {
+      "id": "57553ed8-f591-485e-80ac-c5ef9e715bef",
+      "answerId": "59c3f7ee-21a8-437e-b665-b06d750a77ec",
+      "votes": 1,
+      "userName": "Klausimelis2000"
+    },
+    {
+      "id": "eba0b18c-f567-41b0-90f9-2870f0705f1e",
+      "answerId": "59c3f7ee-21a8-437e-b665-b06d750a77ec",
+      "votes": 1,
+      "userName": "admin"
     }
   ]
 }

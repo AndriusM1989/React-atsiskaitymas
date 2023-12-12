@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import QuestionContext from "../../../contexts/QuestionContext";
 import QuestionCard from "../../UI/questionCard/questionCard";
 import UsersContext from "../../../contexts/UsersContext";
-import { click } from "@testing-library/user-event/dist/click";
+import AnswerContext from "../../../contexts/AnswerContext";
 
-const StyledMain = styled.main`
+const StyledAnsweredQuestions = styled.main`
   > div:first-child {
     > div {
       display: flex;
@@ -39,26 +39,33 @@ const StyledMain = styled.main`
   }
 `;
 
-const Main = () => {
+const AnsweredQuestions = () => {
   const { question } = useContext(QuestionContext);
+  const { answer } = useContext(AnswerContext);
   const { loggedInUser } = useContext(UsersContext);
-  const sortedQuestions = question.sort((a, b) => {
-    return new Date(b.postDate) - new Date(a.postDate);
+
+  const questionsWithAnswers = question.map((q) => {
+    q.answers = answer.filter((a) => a.questionId === q.id);
+    return q;
   });
 
+  const questionsWithAnswersFiltered = questionsWithAnswers.filter(
+    (q) => q.answers.length > 0
+  );
+
   return (
-    <StyledMain>
+    <StyledAnsweredQuestions>
       <div>
-        <h1>Newest Questions</h1>
+        <h1>Answered Questions</h1>
         <h3>{question.length} questions</h3>
       </div>
       <div>
-        {sortedQuestions.map((questions) => {
+        {questionsWithAnswersFiltered.map((questions) => {
           return <QuestionCard key={questions.id} data={questions} />;
         })}
       </div>
-    </StyledMain>
+    </StyledAnsweredQuestions>
   );
 };
 
-export default Main;
+export default AnsweredQuestions;

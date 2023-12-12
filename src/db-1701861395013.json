@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "user",
+      "isBanned": false,
+      "userName": "Klausimelis2000",
+      "email": "klausimelis@gmail.com",
+      "passwordNormal": "miaumiau20#",
+      "password": "$2a$08$IYi5RXkK/fSmd3dr0lzrMO1w6f5ZVnvYtKrOzlAARlHs13AsFtDOi",
+      "age": 23,
+      "registerDate": "2023-01-01",
+      "profilePicture": "https://www.shutterstock.com/image-photo/profile-view-cute-young-red-600nw-2242222153.jpg"
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "isBanned": false,
+      "userName": "Atsakimelis2000",
+      "email": "atsakimelis@gmail.com",
+      "passwordNormal": "heyMamma@69",
+      "password": "$2a$08$m2/yXX.IutwnSlaYZ/q.0OMrkp86XJuvwy386gnj/iNat/YDV7cWq",
+      "age": 30,
+      "registerDate": "2023-01-01",
+      "profilePicture": "https://i5.walmartimages.com/seo/Funko-Pop-Animation-Johnny-Bravo-Johnny-with-Mirror-Com-Vinyl-Figure_cc707dce-b67c-403c-a8d2-5462cc735080.db2c948261e485099d08c8775d24eed2.png"
+    },
+    {
+      "id": 0,
+      "role": "admin",
+      "isBanned": false,
+      "userName": "admin",
+      "email": "a@a.com",
+      "passwordNormal": "admin",
+      "password": "$2a$08$zCOTcOiGYiyt0A2YDH/aAuHE1p960p/mCDQJlJFijcerHtAma40la",
+      "profilePicture": "https://cdn.vectorstock.com/i/preview-1x/34/96/flat-business-man-user-profile-avatar-in-suit-vector-4333496.jpg"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "userId": 0,
+      "title": "Apie orus",
+      "description": "Koks bus oras kitą vasara, ar verta planuotis atostogas prie jūros?",
+      "postDate": "2023-12-05T12:29:15.680Z",
+      "votes": 2,
+      "answers": [
+        {
+          "id": 1,
+          "userId": 2,
+          "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
+          "answerDate": "2023-12-05T12:29:15.680Z",
+          "vote": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 0,
+      "title": "Apie politiką",
+      "description": "Už ką verta balsuoti per ateinančius prezidento rinkimus?",
+      "postDate": "2023-12-01",
+      "votes": 10,
+      "answers": [
+        {
+          "id": 1,
+          "userId": 2,
+          "answer": "Gerų kandidatų nėra, todėl reikia balsuoti už geriausią iš blogų. Svarbu, kad ne konservatoriai...",
+          "answerDate": "2023-12-01",
+          "vote": 10
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "userId": 0,
+      "title": "Bandymas 6 EDIT2",
+      "description": "Atsakymas 6 EDIT2",
+      "postDate": "2023-12-05T11:45:19.953Z",
+      "votes": 7,
+      "answers": [
+        {
+          "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f397",
+          "answer": "Atsakymas 1",
+          "answerDate": "2023-12-05T11:45:11.258Z",
+          "votes": 0
+        },
+        {
+          "id": "e115fa4d-fa12-40da-9fe4-551c0fe0f39456",
+          "answer": "Atsakymas 2",
+          "answerDate": "2023-12-05T11:45:11.258Z",
+          "votes": 123
+        }
+      ]
+    },
+    {
+      "id": "498b4816-4481-40ea-8fd2-40d2b1001e4a",
+      "userId": 0,
+      "title": "Kaip man padaryti tobulą forumą? EDIT1",
+      "description": "Nukipijuoti geriausią variantą internete ir jį patobulinti. EDIT1",
+      "postDate": "2023-12-05T12:29:15.680Z",
+      "votes": 1,
+      "answers": []
+    },
+    {
+      "id": "dcc56c62-6181-4ec4-9588-212641186f1d",
+      "userId": 0,
+      "title": "Testavimas",
+      "description": "Ar turės žymą prijungtas useris užduodant klausimą?",
+      "postDate": "2023-12-06T08:23:14.824Z",
+      "votes": 0,
+      "answers": []
+    }
+  ],
+  "answers": [
+    {
+      "answerId": 1,
+      "questionId": 1,
+      "userId": 2,
+      "answer": "Vasara bus gera, tačiau kainos bus didelės nes palangos verslininkams bus vėl rekordiškai sunkūs metai",
+      "answerDate": "2023-12-05T12:29:15.680Z",
+      "vote": 0
+    }
+  ]
+}
